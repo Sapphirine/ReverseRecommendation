@@ -129,23 +129,15 @@ def query_api(term, location):
         print u'No businesses for {0} in {1} found.'.format(term, location)
         return
 
-    # i = 0
     for i in xrange(min(SEARCH_LIMIT, len(businesses))):
         business_id = businesses[i]['id']
-
-        # # print u'{0} businesses found, querying business info ' \
-        # #     'for the top result "{1}" ...'.format(
-        #         len(businesses), business_id)
-        # response = get_business(business_id)
         top5_responses.append(get_business(business_id))
-        # print u'Result for business "{0}" found:'.format(business_id)
+
     return top5_responses
 
 def query_result(review):
     try:
-        # infile = open("KeyWord/doc/test_review.txt", 'r')
-        # reviews = infile.read()
-        keywords = keywords_search(review)
+        keywords = keywords_search(review) + ' chinese'
         return query_api(keywords, DEFAULT_LOCATION)
     except urllib2.HTTPError as error:
         sys.exit(
