@@ -1,5 +1,5 @@
 # ReverseRecommendation
-BDA Final Proj: Recommendation from your negative review
+Big Data Analytics Final Project - Team 18 - ReverseRecommendation
 
 ### remember to run the following command before development:
 pip install -t lib -r requirements.txt
