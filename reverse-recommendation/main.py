@@ -46,9 +46,13 @@ class MainHandler(Handler):
         self.render("index.html")
 
     def post(self):
-        # review = self.request.get("review")
-        # self.render_json(query_result(review))
-        self.render("search.html")
+        review = self.request.get("review")
+        keywords, search_result_json = query_result(review)
+        keywords = keywords.replace(' ', ', ')
+        # print "search_result_json:"
+        # print search_result_json
+        # self.render_json(search_result_json)
+        self.render("search.html", keywords=keywords)
 
 
 app = webapp2.WSGIApplication([

@@ -120,7 +120,7 @@ def query_api(term, location):
         term (str): The search term to query.
         location (str): The location of the business to query.
     """
-    top5_responses = []
+    top_responses = []
     response = search(term, location)
 
     businesses = response.get('businesses')
@@ -131,14 +131,14 @@ def query_api(term, location):
 
     for i in xrange(min(SEARCH_LIMIT, len(businesses))):
         business_id = businesses[i]['id']
-        top5_responses.append(get_business(business_id))
+        top_responses.append(get_business(business_id))
 
-    return top5_responses
+    return top_responses
 
 def query_result(review):
     try:
         keywords = keywords_search(review) + ' chinese'
-        return query_api(keywords, DEFAULT_LOCATION)
+        return keywords, query_api(keywords, DEFAULT_LOCATION)
     except urllib2.HTTPError as error:
         sys.exit(
             'Encountered HTTP error {0}. Abort program.'.format(error.code))
