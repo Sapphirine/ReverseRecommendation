@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+
+<html lang="en-US"> <!--<![endif]-->
+    <head>
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Recommentation Result</title>
+
+        <meta name="description" content="Insert Your Site Description" />
+
+        <!-- Mobile Specifics -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+
+        <!-- Mobile Internet Explorer ClearType Technology -->
+        <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
+
+        <!-- Bootstrap -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Main Style -->
+        <link href="assets/css/main.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="assets/css/supersized.css" rel="stylesheet">
+        <link href="assets/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- FancyBox -->
+        <link href="assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+        <!-- Font Icons -->
+        <link href="assets/css/fonts.css" rel="stylesheet">
+
+        <!-- Shortcodes -->
+        <link href="assets/css/shortcodes.css" rel="stylesheet">
+
+        <!-- Responsive -->
+        <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="assets/css/responsive.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="assets/css/supersized.css" rel="stylesheet">
+        <link href="assets/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- Google Font -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+        <!-- Modernizr -->
+        <script src="assets/js/modernizr.js"></script>
+    </head>
+    <body>
+        <!-- Keyword Section -->
+        <div id="about" class="page-alternate">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="title-page">
+                            <h2 class="title">Reversed Keywords:</h2>
+                            <h3 class="title-description">{{keywords}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- start pre-mid recommendations -->
+                <div class="row">
+                    <!-- Start Profile -->
+                    {% for result_json in result_jsons1 %}
+                    <div class="span4 profile">
+                        <div class="image-wrap">
+                            <div class="hover-wrap">
+                                <span class="overlay-img"></span>
+                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
+                            </div>
+                            <img src="{{ result_json.image_url }}">
+                        </div>
+                        <h3 class="profile-name">{{ result_json.name }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- end pre-mid recommendations -->
+                <!-- start mid-post recommendations -->
+                <div class="row">
+                    {% for result_json in result_jsons2 %}
+                    <div class="span4 profile">
+                        <div class="image-wrap">
+                            <div class="hover-wrap">
+                                <span class="overlay-img"></span>
+                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
+                            </div>
+                            <img src="{{ result_json.image_url }}">
+                        </div>
+                        <h3 class="profile-name">{{ result_json.name }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- end mid-post recommendations -->
+            </div>
+        </div>
+        <!-- End Keyword Section -->
+
+        <!-- Js -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+        <script src="assets/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+        <script src="assets/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
+        <script src="assets/js/waypoints.js"></script> <!-- WayPoints -->
+        <script src="assets/js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+        <script src="assets/js/jquery.isotope.js"></script> <!-- Isotope Filter -->
+        <script src="assets/js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+        <script src="assets/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+        <script src="assets/js/jquery.tweet.js"></script> <!-- Tweet -->
+        <script src="assets/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+        <script src="assets/js/main.js"></script> <!-- Default JS -->
+        <!-- End Js -->
+    </body>
+</html>

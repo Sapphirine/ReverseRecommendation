@@ -43,8 +43,22 @@ class Handler(webapp2.RequestHandler):
 
 class MainHandler(Handler):
     def get(self):
-        self.render_json(query_result())
-        # self.render("index.html")
+        self.render("index.html")
+
+    def post(self):
+        review = self.request.get("review")
+        keywords, search_result_jsons = query_result(review)
+        # keywords = keywords.replace(' ', ', ')
+        for result_json in search_result_jsons:
+            result_json["image_url"] = result_json["image_url"].replace("ms", "l")
+
+        # print "search_result_json:"
+        # print search_result_json
+        # self.render_json(search_result_json)
+        self.render("search.html", keywords=keywords,                          \
+                                   result_jsons1=search_result_jsons[:3],      \
+                                   result_jsons2=search_result_jsons[3:])
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

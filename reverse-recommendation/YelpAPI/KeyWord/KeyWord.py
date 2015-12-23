@@ -69,7 +69,7 @@ def keywords_search(reviews):
         if d[0] > 0:
             chosen_key_words.append(d[1])
 
-    return ' '.join(chosen_key_words)
+    return ', '.join(chosen_key_words)
 
 if __name__ == "__main__":
     infile = open("doc/test_review.txt", 'r')
