@@ -46,8 +46,9 @@ class MainHandler(Handler):
         self.render("index.html")
 
     def post(self):
-        review = self.request.get("review")
-        self.render_json(query_result(review))
+        # review = self.request.get("review")
+        # self.render_json(query_result(review))
+        self.render("search.html")
 
 
 app = webapp2.WSGIApplication([
