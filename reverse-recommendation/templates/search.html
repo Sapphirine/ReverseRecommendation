@@ -56,10 +56,9 @@
         <script src="assets/js/modernizr.js"></script>
     </head>
     <body>
-        <!-- About Section -->
+        <!-- Keyword Section -->
         <div id="about" class="page-alternate">
             <div class="container">
-                <!-- Title Page -->
                 <div class="row">
                     <div class="span12">
                         <div class="title-page">
@@ -68,90 +67,42 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Title Page -->
-                <!-- People -->
+                <!-- start pre-mid recommendations -->
                 <div class="row">
                     <!-- Start Profile -->
+                    {% for result_json in result_jsons1 %}
                     <div class="span4 profile">
                         <div class="image-wrap">
                             <div class="hover-wrap">
                                 <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">CTO/Founder</span>
+                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
                             </div>
-                            <img src="assets/img/profile/profile-01.jpg" alt="John Doe">
+                            <img src="{{ result_json.image_url }}">
                         </div>
-                        <h3 class="profile-name">John Doe</h3>
+                        <h3 class="profile-name">{{ result_json.name }}</h3>
                     </div>
-                    <!-- End Profile -->
-                    <!-- Start Profile -->
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Creative Director</span>
-                            </div>
-                            <img src="assets/img/profile/profile-02.jpg" alt="Jane Helf">
-                        </div>
-                        <h3 class="profile-name">Jane Helf</h3>
-                    </div>
-                    <!-- End Profile -->
-                    <!-- Start Profile -->
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Lead Designer</span>
-                            </div>
-                            <img src="assets/img/profile/profile-03.jpg" alt="Joshua Insanus">
-                        </div>
-                        <h3 class="profile-name">Joshua Insanus</h3>
-                    </div>
-                    <!-- End Profile -->
+                    {% endfor %}
                 </div>
-                <!-- End People -->
-                <!-- People -->
+                <!-- end pre-mid recommendations -->
+                <!-- start mid-post recommendations -->
                 <div class="row">
-                    <!-- Start Profile -->
+                    {% for result_json in result_jsons2 %}
                     <div class="span4 profile">
                         <div class="image-wrap">
                             <div class="hover-wrap">
                                 <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">CTO/Founder</span>
+                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
                             </div>
-                            <img src="assets/img/profile/profile-01.jpg" alt="John Doe">
+                            <img src="{{ result_json.image_url }}">
                         </div>
-                        <h3 class="profile-name">John Doe</h3>
+                        <h3 class="profile-name">{{ result_json.name }}</h3>
                     </div>
-                    <!-- End Profile -->
-                    <!-- Start Profile -->
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Creative Director</span>
-                            </div>
-                            <img src="assets/img/profile/profile-02.jpg" alt="Jane Helf">
-                        </div>
-                        <h3 class="profile-name">Jane Helf</h3>
-                    </div>
-                    <!-- End Profile -->
-                    <!-- Start Profile -->
-                    <div class="span4 profile">
-                        <div class="image-wrap">
-                            <div class="hover-wrap">
-                                <span class="overlay-img"></span>
-                                <span class="overlay-text-thumb">Lead Designer</span>
-                            </div>
-                            <img src="assets/img/profile/profile-03.jpg" alt="Joshua Insanus">
-                        </div>
-                        <h3 class="profile-name">Joshua Insanus</h3>
-                    </div>
-                    <!-- End Profile -->
+                    {% endfor %}
                 </div>
-                <!-- End People -->
+                <!-- end mid-post recommendations -->
             </div>
         </div>
-        <!-- End About Section -->
+        <!-- End Keyword Section -->
 
         <!-- Js -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->

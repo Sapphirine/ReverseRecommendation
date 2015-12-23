@@ -31,7 +31,7 @@ from KeyWord.KeyWord import keywords_search
 API_HOST = 'api.yelp.com'
 DEFAULT_TERM = 'dinner'
 DEFAULT_LOCATION = 'New York, NY'
-SEARCH_LIMIT = 5
+SEARCH_LIMIT = 6
 SEARCH_PATH = '/v2/search/'
 BUSINESS_PATH = '/v2/business/'
 
@@ -137,7 +137,7 @@ def query_api(term, location):
 
 def query_result(review):
     try:
-        keywords = keywords_search(review) + ' chinese'
+        keywords = keywords_search(review) + ', chinese'
         return keywords, query_api(keywords, DEFAULT_LOCATION)
     except urllib2.HTTPError as error:
         sys.exit(
