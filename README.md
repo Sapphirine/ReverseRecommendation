@@ -48,12 +48,15 @@ A crucial component in this project is to recognize the relations between inform
 In the folder named WebApp, there are two subfolders including Recommend2U and sign_in_with_twitter. Recommend2U folder contains the front-end code, servlet and database API; sign_in_with_twitter folder contains OAuth2.0 codes to allow Twitter users be redirected to Twitter and get authentication afterwards. Due to the technical error in Twitter app, the Twitter app credential may not work sometimes, please replace it with your credentials
 
 ###Google App Engine
+![GAE](https://deciphertools.com/blog/img/google-app-engine-logo.jpg)
+For our backend, we use Google App Engine with Python SDK to build the platform.
+Google App Engine for Python is based on WebApp2. It provides the framework for user to build the website.
+So basically, this website contains one main routes - MainPage, which will handle two http request,
+one is get and other one is post. Get action just handles rendering the main page, and post action handles the clicking recommendation button and rendering the recommendation results.
 
+###Yelp API
+Since we request the yelp result through yelp API, so we create one function to handle all of the yelp results. You can see the detail in the YelpAPI folder. With the 3 generated keywords, we feed it in to the Yelp API along with other searching criteria that we care about according to the scenario of the application. For example, we can combine the location of the user can recommend the user of the restaurants that are near by him or only recommend. 
 
-###entry main function of recommendation on twitter side
-GetFollowersIDs.java in BigDataProject/javaResources/src/cmu.arktweetnlp
-
-This function is used for fetching tweets from our followers in nearly real time, detect desires, query products, respond with recommendations and analyze the users reviews. In order to run it, you would have to firstly include your own AWS credential and twitter credential.
-
-###Map Reduce pattern design
-The folder named Classification contains all the Map Reduce pattern designs. WordCount.java is used for constructing the dictionary. ClassWordCount.java is used for training the data set.  Sentiment.java is used for the implementing the sentiment algorithm. In order to run them, we suggest you first build the path to make your Eclipse be able to run Hadoop and then open the run configuration to set the input path and the out put path. More details will be included on the readme file on our github.
+###KeyWord
+The keyword we extracted so far can be interpreted as the concept that the user mentions most and cares about most. Also it may include some negative words. So when we want to recommend new restaurant to this user, we have to map these keywords into some positive
+search term so that the recommended restaurants may have some characteristic that can satisfy the user most. We to this procedure manually, for example, for the negative word “dirty”, we map it into “clean”. For the neutral terms like “service”, we simply map it into “good service”. These mapped searching keywords are the keys of another hash map. When certain word gets mapped to, we increment its count by 1. In the end we select 3 searching keywords with largest count.
