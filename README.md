@@ -1,31 +1,37 @@
 # ReverseRecommendation
-#### Big Data Analytics Final Project - Team 25 - ReverseRecommendation
+### Big Data Analytics Final Project - Team 25 - ReverseRecommendation
 ========================
 
-### remember to run the following command before development:
+###remember to run the following command before development:
 pip install -t lib -r requirements.txt
 
-### If you want to try this program, you can go to this website:
+###If you want to try this program, you can go to this website:
 http://reverse-recommendation.appspot.com/
 
-## General Purpose
+###General Purpose
 *  Find out the insight of customer's negative reviews.
 *  Provide the recommendations from the negative reviews.
 
-## Introduction
+###Introduction
 This project focused on recommending restaurants for Yelp users based on their review article. A naïve approach to build a recommendation system could just be based on user queries and star ratings. However, personal interests and preferences are difficult to identify and sometimes not even aware by consumers themselves. In this project, we build our recommendation model based on low-rating reviews. The major challenge is to identify preferences of consumers, and map it to features of products.
 A crucial component in this project is to recognize the relations between information hidden in negative reviews and user preferences. In the final stage, our system generates searchable words and phrases into Yelp search API to fetch recommendation results. This step mimics human actions when our mind translates preferences into searchable keywords.
 
-## How To Use Our Service?
+###How To Use Our Service?
    1.   Post your negative review at the location our website indicates:
    ![reverse-recommendation-1](http://i.imgur.com/OxwyVvS.png)
 
    2.   Click "Recommend for me!"
+   ![reverse-recommendation-2](http://i.imgur.com/yxeVb6n.png?1)
+
+   3.   Click "Recommend for me!"
+   ![reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
+
+   4.   Click "Recommend for me!"
    ![reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
 
 
 
-## System Work Flow
+###System Work Flow
    1.   Generate the reversed keywords from the negative review
    2.   Put the reversed keywords to the Yelp API to query the result
    3.   Google App Engine get the Yelp API response
