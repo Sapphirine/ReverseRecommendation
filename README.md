@@ -49,13 +49,13 @@ System Work Flow
 Web app
 ------
 There are three main parts for our web app:
-- **Google App Engine
-- **Yelp API
-- **Key Word Search
+- **Google App Engine**
+- **Yelp API**
+- **Key Word Search**
 
 We will go through these three parts in the following sections. 
 
-Google App Engine
+- Google App Engine
 ------
 ![GAE](https://deciphertools.com/blog/img/google-app-engine-logo.jpg)
 
@@ -64,11 +64,11 @@ Google App Engine for Python is based on WebApp2. It provides the framework for 
 So basically, this website contains one main routes - MainPage, which will handle two http request,
 one is get and other one is post. Get action just handles rendering the main page, and post action handles the clicking recommendation button and rendering the recommendation results.
 
-Yelp API
+- Yelp API
 ------
 Since we request the yelp result through yelp API, so we create one function to handle all of the yelp results. You can see the detail in the YelpAPI folder. With the 3 generated keywords, we feed it in to the Yelp API along with other searching criteria that we care about according to the scenario of the application. For example, we can combine the location of the user can recommend the user of the restaurants that are near by him or only recommend. 
 
-KeyWord
+- Key Word Search
 ------
 The keyword we extracted so far can be interpreted as the concept that the user mentions most and cares about most. Also it may include some negative words. So when we want to recommend new restaurant to this user, we have to map these keywords into some positive
 search term so that the recommended restaurants may have some characteristic that can satisfy the user most. We to this procedure manually, for example, for the negative word “dirty”, we map it into “clean”. For the neutral terms like “service”, we simply map it into “good service”. These mapped searching keywords are the keys of another hash map. When certain word gets mapped to, we increment its count by 1. In the end we select 3 searching keywords with largest count.
