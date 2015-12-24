@@ -18,10 +18,10 @@ A crucial component in this project is to recognize the relations between inform
 
 ## How To Use Our Service?
    1.   Post your negative review at the location our website indicates:
-   [reverse-recommendation-1](http://i.imgur.com/OxwyVvS.png)
+   ![reverse-recommendation-1](http://i.imgur.com/OxwyVvS.png)
    2.   Click "Recommend for me!"
-   [reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
-   
+   ![reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
+
 
 
 ## System Work Flow
