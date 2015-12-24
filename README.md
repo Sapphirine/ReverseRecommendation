@@ -18,9 +18,9 @@ A crucial component in this project is to recognize the relations between inform
 
 ## How To Use Our Service?
    1.   Post your negative review at the location our website indicates:
-   ![Post negative review here](http://imgur.com/OxwyVvS)
+   [reverse-recommendation-1](http://i.imgur.com/OxwyVvS.png)
    2.   Click "Recommend for me!"
-   ![Click recommendation button](http://imgur.com/1chsr5o)
+   [reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
    
 
 
