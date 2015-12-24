@@ -52,7 +52,8 @@ class MainHandler(Handler):
         review = self.request.get("review")
         keywords, search_result_jsons = query_result(review)
         for result_json in search_result_jsons:
-            result_json["image_url"] = result_json["image_url"]                \
+            if result_json.get("image_url"):
+                result_json["image_url"] = result_json["image_url"]            \
                                                         .replace("ms.", "l.")
         pprint.pprint(search_result_jsons, indent=2)
         half = len(search_result_jsons) // 2
