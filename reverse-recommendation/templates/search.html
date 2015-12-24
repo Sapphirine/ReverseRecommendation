@@ -75,11 +75,16 @@
                         <div class="image-wrap">
                             <div class="hover-wrap">
                                 <span class="overlay-img"></span>
-                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
+                                <a href="{{ result_json.url }}">
+                                    <span class="overlay-text-thumb">{{ result_json.name }}</span>
+                                </a>
                             </div>
                             <img src="{{ result_json.image_url }}">
                         </div>
-                        <h3 class="profile-name">{{ result_json.name }}</h3>
+                        <a href="{{ result_json.url }}">
+                            <h3 class="profile-name">{{ result_json.name }}</h3>
+                        </a>
+                        <p>{{ result_json.reviews[0].excerpt }}</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -91,11 +96,16 @@
                         <div class="image-wrap">
                             <div class="hover-wrap">
                                 <span class="overlay-img"></span>
-                                <a href="{{ result_json.url }}"><span class="overlay-text-thumb">{{ result_json.name }}</span></a>
+                                <a href="{{ result_json.url }}">
+                                    <span class="overlay-text-thumb">{{ result_json.name }}</span>
+                                </a>
                             </div>
                             <img src="{{ result_json.image_url }}">
                         </div>
-                        <h3 class="profile-name">{{ result_json.name }}</h3>
+                        <a href="{{ result_json.url }}">
+                            <h3 class="profile-name">{{ result_json.name }}</h3>
+                        </a>
+                        <p>{{ result_json.reviews[0].excerpt }}</p>
                     </div>
                     {% endfor %}
                 </div>
