@@ -21,6 +21,7 @@ A crucial component in this project is to recognize the relations between inform
    ![Post negative review here](http://imgur.com/OxwyVvS)
    2.   Click "Recommend for me!"
    ![Click recommendation button](http://imgur.com/1chsr5o)
+   
 
 
 ## System Work Flow
