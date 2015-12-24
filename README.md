@@ -1,7 +1,6 @@
 # ReverseRecommendation
 ### Big Data Analytics Final Project - Team 25 - ReverseRecommendation
-========================
-
+------
 ###remember to run the following command before development:
 pip install -t lib -r requirements.txt
 
@@ -9,14 +8,17 @@ pip install -t lib -r requirements.txt
 http://reverse-recommendation.appspot.com/
 
 ###General Purpose
+========================
 *  Find out the insight of customer's negative reviews.
 *  Provide the recommendations from the negative reviews.
 
 ###Introduction
+========================
 This project focused on recommending restaurants for Yelp users based on their review article. A naïve approach to build a recommendation system could just be based on user queries and star ratings. However, personal interests and preferences are difficult to identify and sometimes not even aware by consumers themselves. In this project, we build our recommendation model based on low-rating reviews. The major challenge is to identify preferences of consumers, and map it to features of products.
 A crucial component in this project is to recognize the relations between information hidden in negative reviews and user preferences. In the final stage, our system generates searchable words and phrases into Yelp search API to fetch recommendation results. This step mimics human actions when our mind translates preferences into searchable keywords.
 
 ###How To Use Our Service?
+========================
    1.   Post your negative review at the location our website indicates:
    ![Imgur](http://i.imgur.com/OxwyVvS.png)
 
@@ -39,24 +41,30 @@ A crucial component in this project is to recognize the relations between inform
 
 
 ###System Work Flow
+========================
    1.   Generate the reversed keywords from the negative review
    2.   Put the reversed keywords to the Yelp API to query the result
    3.   Google App Engine get the Yelp API response
    4.   Render the recommendations & keywords to our frontend.
 
 ###Web app
+========================
 In the folder named WebApp, there are two subfolders including Recommend2U and sign_in_with_twitter. Recommend2U folder contains the front-end code, servlet and database API; sign_in_with_twitter folder contains OAuth2.0 codes to allow Twitter users be redirected to Twitter and get authentication afterwards. Due to the technical error in Twitter app, the Twitter app credential may not work sometimes, please replace it with your credentials
 
 ###Google App Engine
+========================
 ![GAE](https://deciphertools.com/blog/img/google-app-engine-logo.jpg)
+
 For our backend, we use Google App Engine with Python SDK to build the platform.
 Google App Engine for Python is based on WebApp2. It provides the framework for user to build the website.
 So basically, this website contains one main routes - MainPage, which will handle two http request,
 one is get and other one is post. Get action just handles rendering the main page, and post action handles the clicking recommendation button and rendering the recommendation results.
 
 ###Yelp API
+========================
 Since we request the yelp result through yelp API, so we create one function to handle all of the yelp results. You can see the detail in the YelpAPI folder. With the 3 generated keywords, we feed it in to the Yelp API along with other searching criteria that we care about according to the scenario of the application. For example, we can combine the location of the user can recommend the user of the restaurants that are near by him or only recommend. 
 
 ###KeyWord
+========================
 The keyword we extracted so far can be interpreted as the concept that the user mentions most and cares about most. Also it may include some negative words. So when we want to recommend new restaurant to this user, we have to map these keywords into some positive
 search term so that the recommended restaurants may have some characteristic that can satisfy the user most. We to this procedure manually, for example, for the negative word “dirty”, we map it into “clean”. For the neutral terms like “service”, we simply map it into “good service”. These mapped searching keywords are the keys of another hash map. When certain word gets mapped to, we increment its count by 1. In the end we select 3 searching keywords with largest count.
