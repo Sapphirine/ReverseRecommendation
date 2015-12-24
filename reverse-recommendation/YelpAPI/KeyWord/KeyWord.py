@@ -38,7 +38,7 @@ def keywords_search(reviews):
     # wordnet_lemmatizer = WordNetLemmatizer()
     # stemmed_tokens = [wordnet_lemmatizer.lemmatize(i) for i in stopped_tokens ] 
 
-    chosen_key_words = []
+    chosen_key_words = ['chinese']
 
     # Search in general key word
     key_words_dict = dict.fromkeys(key_map.values(), 0)

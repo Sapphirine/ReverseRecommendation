@@ -137,7 +137,7 @@ def query_api(term, location):
 
 def query_result(review):
     try:
-        keywords = keywords_search(review) + ', chinese'
+        keywords = keywords_search(review)
         return keywords, query_api(keywords, DEFAULT_LOCATION)
     except urllib2.HTTPError as error:
         sys.exit(

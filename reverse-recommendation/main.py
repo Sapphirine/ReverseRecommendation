@@ -19,12 +19,15 @@
 import jinja2
 import json
 import os
+import pprint
 import webapp2
 
+# for keyword search
 from YelpAPI.YelpSearchAPI import query_result
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+jinja_env = jinja2.Environment                                                 \
+                (loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 
 class Handler(webapp2.RequestHandler):
     def write(self, *a, **kw):
@@ -48,16 +51,14 @@ class MainHandler(Handler):
     def post(self):
         review = self.request.get("review")
         keywords, search_result_jsons = query_result(review)
-        # keywords = keywords.replace(' ', ', ')
         for result_json in search_result_jsons:
-            result_json["image_url"] = result_json["image_url"].replace("ms", "l")
-
-        # print "search_result_json:"
-        # print search_result_json
-        # self.render_json(search_result_json)
+            result_json["image_url"] = result_json["image_url"]                \
+                                                        .replace("ms.", "l.")
+        pprint.pprint(search_result_jsons, indent=2)
+        half = len(search_result_jsons) // 2
         self.render("search.html", keywords=keywords,                          \
-                                   result_jsons1=search_result_jsons[:3],      \
-                                   result_jsons2=search_result_jsons[3:])
+                                   result_jsons1=search_result_jsons[:half],   \
+                                   result_jsons2=search_result_jsons[half:])
 
 
 app = webapp2.WSGIApplication([
