@@ -27,13 +27,15 @@ A crucial component in this project is to recognize the relations between inform
    ![Imgur](http://i.imgur.com/StPYBAM.png)
 
    4.   As you can see, there are reversed keywords our service extracts from your review:
-   ![Imgur](http://i.imgur.com/VHvqPhw.png)
+   ![Imgur](http://i.imgur.com/uhLwnaw.png)
 
-   5.   Also, you can the reviews from our servie to understand why we recommend it for you:
+   5.   Also, you can read the reviews from our servie to understand why we recommend it for you:
    ![Imgur](http://i.imgur.com/keahIHW.png)
 
    6.   Evenmore, you can click on the picture or the name, we will redirect you to the yelp website:
    ![Imgur](http://i.imgur.com/VHvqPhw.png)
+        Here is the original Yelp Website:
+   ![Imgur](http://i.imgur.com/2iNhjI8.png)
 
 
 ###System Work Flow
