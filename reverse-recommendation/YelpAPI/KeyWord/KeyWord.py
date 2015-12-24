@@ -1,9 +1,9 @@
-from nltk.tokenize import TweetTokenizer
-import string
-from stop_words import get_stop_words
-# from nltk.stem import WordNetLemmatizer
 import nltk
 import os
+import string
+
+from nltk.tokenize import TweetTokenizer
+from stop_words    import get_stop_words
 
 doc_dir = os.path.join(os.path.dirname(__file__), "doc")
 keyword_general_path = os.path.join(doc_dir, 'keyword_map_general.txt')
@@ -12,31 +12,28 @@ keyword_special_path = os.path.join(doc_dir, 'keyword_map_special.txt')
 
 def keywords_search(reviews):
     key_map = {}
-    # for k in open(os.getcwd() + "/KeyWord/keyword_map_general.txt", 'r'):
+
     for k in open(keyword_general_path, 'r'):
         a = k.strip().split(", ")
         key_map[a[0]] = a[1]
 
     special_map = {}
-    # for k in open(os.getcwd() + "/KeyWord/keyword_map_special.txt", 'r'):
+
     for k in open(keyword_special_path, 'r'):
         a = k.strip().split(", ")
         special_map[a[0]] = a[1]
 
+    # get the tokens from the review
     raw = reviews.lower()
     tokenizer = TweetTokenizer()
     tokens = tokenizer.tokenize(raw)
 
     # remove punctuations
-    no_punc_tokens = [i for i in tokens if (not i in string.punctuation+string.digits) and (not "." in i)]
+    no_punc_tokens = [i for i in tokens if (not i in string.punctuation + string.digits) and (not "." in i)]
 
     # remove stop words from tokens
     en_stop = get_stop_words('en')
     stopped_tokens = [i for i in no_punc_tokens if not i in en_stop]
-
-    # stem tokens
-    # wordnet_lemmatizer = WordNetLemmatizer()
-    # stemmed_tokens = [wordnet_lemmatizer.lemmatize(i) for i in stopped_tokens ] 
 
     chosen_key_words = ['chinese']
 
@@ -44,7 +41,6 @@ def keywords_search(reviews):
     key_words_dict = dict.fromkeys(key_map.values(), 0)
 
     # Select keyword use only key word to select
-    # s = set(stemmed_tokens)
     s = set(stopped_tokens)
     for t in key_map.keys():
         if t in s:
@@ -59,7 +55,6 @@ def keywords_search(reviews):
     #  Select keyword using wordnet
 
     # Select keyword use only key word to select
-    # s = set(stemmed_tokens)
     s = set(stopped_tokens)
     for t in special_map.keys():
         if t in s:
