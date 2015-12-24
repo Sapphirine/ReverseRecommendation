@@ -69,6 +69,7 @@ one is get and other one is post. Get action just handles rendering the main pag
 
 - Yelp API
 ------
+![YelpAPI](https://appdevelopermagazine.com/images/news_images%5Cyelp-api-updates_eb2hb3el.jpg)
 Since we request the yelp result through yelp API, so we create one function to handle all of the yelp results. You can see the detail in the YelpAPI folder. With the 3 generated keywords, we feed it in to the Yelp API along with other searching criteria that we care about according to the scenario of the application. For example, we can combine the location of the user can recommend the user of the restaurants that are near by him or only recommend. 
 
 - Key Word Search
