@@ -20,15 +20,20 @@ A crucial component in this project is to recognize the relations between inform
    1.   Post your negative review at the location our website indicates:
    ![reverse-recommendation-1](http://i.imgur.com/OxwyVvS.png)
 
-   2.   Click "Recommend for me!"
+   2.   Click "Recommend for me!":
    ![reverse-recommendation-2](http://i.imgur.com/yxeVb6n.png?1)
 
-   3.   Click "Recommend for me!"
-   ![reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
+   3.   Now, you can get the recommendations from our service:
+   ![Imgur](http://i.imgur.com/StPYBAM.png)
 
-   4.   Click "Recommend for me!"
-   ![reverse-recommendation-2](http://i.imgur.com/1chsr5o.png)
+   4.   As you can see, there are reversed keywords our service extracts from your review:
+   ![Imgur](http://i.imgur.com/VHvqPhw.png)
 
+   5.   Also, you can the reviews from our servie to understand why we recommend it for you:
+   ![Imgur](http://i.imgur.com/keahIHW.png)
+
+   6.   Evenmore, you can click on the picture or the name, we will redirect you to the yelp website:
+   ![Imgur](http://i.imgur.com/VHvqPhw.png)
 
 
 ###System Work Flow
